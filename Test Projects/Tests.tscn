@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://screen_color_screen_changer/ScreenColorChangeShader.tscn" type="PackedScene" id=1]
+
+[node name="Tests" type="Node"]
+
+[node name="ScreenColorChangeShader" parent="." instance=ExtResource( 1 )]

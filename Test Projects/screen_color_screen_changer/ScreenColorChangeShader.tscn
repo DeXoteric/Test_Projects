@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://screen_color_screen_changer/assets/greyscale_4_colors.png" type="Texture" id=1]
+[ext_resource path="res://screen_color_screen_changer/assets/olive_4_colors.png" type="Texture" id=2]
+[ext_resource path="res://screen_color_screen_changer/palette_changer.shader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/is_inverted = false
+shader_param/palette = ExtResource( 2 )
+
+[node name="ScreenColorChangeShader" type="Node"]
+
+[node name="greyscale_4_colors" type="Sprite" parent="."]
+scale = Vector2( 480, 1080 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
